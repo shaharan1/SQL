@@ -16,7 +16,8 @@ SELECT first_name, last_name,SALARY,DEPARTMENT_NAME,location_id
    
     
     SELECT employee_id,last_name,location_id,department_id
-    FROM employees join departments
+    FROM employees 
+    join departments
     USING (department_id);
     
     
