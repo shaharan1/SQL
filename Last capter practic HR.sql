@@ -33,3 +33,16 @@ WHERE department_id in
 (select department_id 
 from departments
 where location_id = 1700 );
+
+
+cha-8 practice
+
+select employee_id,last_name,department_id
+FROM employees
+WHERE department_id in
+(select department_id 
+from employees
+where last_name like '%u%');
+
+
+
