@@ -77,3 +77,52 @@ values('4','Md.Emon','emont@gmail.com',null,'013454545445');
 
 update emp1122 set EMP_NAME='Md.Shaharan' where EMP_ID=1;
 commit;
+
+
+--                               17-01-26 TABLE
+
+create table dc(
+stu_id number(10) not null,
+stu_name varchar2(26)not null,
+stu_dep varchar2(26),
+stu_email varchar2(26),
+stu_cell number(11),
+stu_dob date,
+constraint hr_dc_stu_id_pk primary key(stu_id),
+constraint hr_dc_stu_name_uk unique (stu_name),
+constraint hr_dc_stu_cell_uk unique (stu_cell)
+);     
+
+desc dc;
+insert into dc(STU_ID,STU_NAME,STU_DEP,STU_EMAIL,STU_CELL,STU_DOB)
+values('73901','Abdul Hakim','Botany','abdulhakim@gmail.com','01345564556','01-jan-99');
+
+insert into dc(STU_ID,STU_NAME,STU_DEP,STU_EMAIL,STU_CELL,STU_DOB)
+values('73902',' Hakim Abdul','English','hakimabdul@gmail.com','01345455656','01-jun-98');
+
+insert into dc(STU_ID,STU_NAME,STU_DEP,STU_EMAIL,STU_CELL,STU_DOB)
+values('73903','Abul Kalam','Math','abdulkalam@gmail.com','01545564556','01-jul-00');
+
+insert into dc(STU_ID,STU_NAME,STU_DEP,STU_EMAIL,STU_CELL,STU_DOB)
+values('73904','Kalam Abul ','Ict','kalamabdul@gmail.com','01945564556','01-dec-00');
+
+SELECT
+    * FROM dc;
+    
+    
+--                               2 TABLE data Update
+
+update emp1122 set (emp_salary)=
+(select salary from employees where employee_id=107)
+where emp_id=1;
+commit;
+
+--                  Removing Row in Table
+
+delete from students
+where stu_id between 103 and 188;
+
+rollback;
+
+--                         Truncate Table
+commit;

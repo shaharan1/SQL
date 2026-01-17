@@ -55,4 +55,54 @@ where department_name = 'Sales');
 SELECT AVG(salary)
 FROM employees
 where job_id like 'SA%';
+
+
+
+-- Question-01
+
+select e.first_name,e.last_name,d.department_name,l.city,l.state_province
+from employees e join departments d
+on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+join locations l 
+on d.LOCATION_ID = l.LOCATION_ID ;
+
+-- Question-02
+
+SELECT e.first_name, e.last_name, 
+e.salary, j.grade
+FROM employees e 
+JOIN job_grades j 
+ON e.salary 
+BETWEEN j.lowest_sal 
+AND j.highest_sal;
+
+-- Question-03
+select e.first_name,e.last_name,d.department_name,l.city,l.state_province
+from employees e join departments d
+on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+join locations l 
+on d.LOCATION_ID = l.LOCATION_ID 
+where e.first_name like '%z%';
+
+-- Question-04
+select first_name,last_name,salary
+from employees
+where salary < (
+select salary
+from employees where employee_id=182);
+
+-- Question-05
+
+select
+e.first_name as "employee_first_name",
+m.first_name as "manager_first_name"
+from 
+    employees e
+join 
+    employees m
+on 
+    e.manager_id = m.employee_id
+order by 
+    manager_first_name, employee_first_name;
+
  
