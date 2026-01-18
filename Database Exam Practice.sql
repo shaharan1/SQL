@@ -13,6 +13,10 @@ CONSTRAINT hr_emp1294111_eid_pk PRIMARY KEY (eid)
 COMMIT;
 
 
+--                       18-jan-26
+
+
+
 insert into emp1294111(eid,ename,salary,hire_date,address)
 values('1','A','1000','01-jan-2000','10/3A');
 
@@ -106,3 +110,6 @@ order by
     manager_first_name, employee_first_name;
 
  
+ 
+ 
+

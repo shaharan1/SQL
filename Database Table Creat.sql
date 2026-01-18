@@ -126,3 +126,67 @@ rollback;
 
 --                         Truncate Table
 commit;
+
+--                         18-Jan-26
+--                   Alter Table Statement
+alter table emp1122
+add (hire_date date default sysdate,blood_grp varchar(3));
+
+select * from emp1122;
+
+update emp1122 set hire_date='30-jul-20',BLOOD_GRP='AB+' where emp_id=3;
+
+alter table emp1122
+rename column emp_salary to salary;
+
+alter table emp1122
+add (drop_tab varchar(30));
+
+alter table emp1122
+drop  (drop_tab);
+
+alter table emp1122
+add (faltu_tab varchar(30));
+
+alter table emp1122 read only;
+alter table emp1122
+drop (faltu_tab);
+
+rollback;
+
+alter table emp1122
+add (abc varchar(26));
+
+alter table emp1122
+drop (abc);
+
+alter table emp1122 read write;
+
+alter table emp1122
+drop (abc);
+
+alter table emp1122
+drop (faltu_tab);
+
+
+select * from emp1122;
+
+
+--                                SEQUENCE
+
+create SEQUENCE stu_sq_stu_id
+START WITH 100
+INCREMENT BY 1 
+MAXVALUE 999999;
+
+
+select stu_sq_stu_id.nextval
+from dual;
+
+insert into students(stu_id,STU_DOB,STU_EMAIL,STU_NAME,CELL_NO)
+values(stu_sq_stu_id.nextval,'01-jul-00','abdulkalam@gmail.com','Abul Kalam','01545564556');
+
+select stu_sq_stu_id.currval
+from dual;
+
+commit;
