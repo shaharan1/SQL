@@ -190,3 +190,31 @@ select stu_sq_stu_id.currval
 from dual;
 
 commit;
+
+--                                      19-jan-26
+
+create view emp_com
+as select last_name,salary,COMMISSION_PCT 
+from employees
+where COMMISSION_PCT is not null;
+
+select * from emp_com;
+
+
+CREATE VIEW emp_sha
+AS SELECT INITCAP(last_name) as  "final_last_name",
+       LENGTH(last_name) as "lengths"
+FROM employees
+WHERE last_name LIKE 'J%'
+   OR last_name LIKE 'A%'
+   OR last_name LIKE 'M%'
+ORDER BY 1;
+
+select * from emp_sha;
+commit;
+
+
+
+
+
+
