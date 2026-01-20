@@ -214,6 +214,38 @@ select * from emp_sha;
 commit;
 
 
+                                 --20-jan-26
+
+desc practice_table;
+
+alter table emp1122 rename to practice_table;
+
+
+
+alter table practice_table rename column DROP_TAB to dob;
+
+--                                subquary
+
+select employee_id,manager_id
+
+--                           controlling user access
+create user jam
+identified by jam;
+
+
+
+
+
+
+
+
+
+
+
+
+                                 
+
+
 
 
 
