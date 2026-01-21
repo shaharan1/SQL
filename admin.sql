@@ -1,0 +1,33 @@
+create USER demo
+IDENTIFIED BY demo;
+
+GRANT create SESSION,
+CREATE TABLE,
+CREATE SEQUENCE,
+CREATE VIEW TO demo;
+
+
+ALTER SESSION SET container = orclpdb;
+
+create role dc;
+
+GRANT CREATE TABLE,
+CREATE VIEW,
+SELECT ANY TABLE,
+INSERT ANY TABLE
+TO dc;
+
+GRANT dc to demo;
+
+ALTER USER demo QUOTA UNLIMITED ON users;
+
+
+
+
+
+
+
+
+
+
+
