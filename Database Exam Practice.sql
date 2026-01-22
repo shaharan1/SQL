@@ -12,6 +12,50 @@ CONSTRAINT hr_emp1294111_eid_pk PRIMARY KEY (eid)
 );
 COMMIT;
 
+--                         22-01-26 practice
+
+
+--ques.no-1
+create table emp1294110(
+e_id number (10),
+e_name varchar2(26),
+salary varchar2(26),
+hire_date date,
+address varchar2(26),
+constraint hr_emp1294111_e_id_pk primary key (e_id)
+);
+
+--ques.no-2
+SELECT department_id, avg(salary)
+     FROM employees
+      group by department_id
+       having max (salary)>12000;
+
+--ques.no-3
+SELECT first_name
+    FROM employees
+     where first_name like 'S%';
+  
+  --ques.no-4   
+SELECT  avg(salary)
+    FROM employees 
+      where job_id like 'SA_%';
+ 
+ --ques.no-5    
+select first_name, last_name,HIRE_DATE
+  from employees
+   order by HIRE_DATE asc;
+     
+
+
+
+
+
+
+
+
+
+
 
 --                       18-jan-26
 

@@ -21,7 +21,7 @@ where stu_id=73901;
 alter table dc
 MODIFY  stu_cell varchar(26);
     
-  TRUNCATE TABLE dc;  
+TRUNCATE TABLE dc;  
   
 SELECT
     * FROM dc;    
