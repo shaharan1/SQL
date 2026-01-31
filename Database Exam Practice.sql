@@ -196,10 +196,14 @@ where e_id=1;
 
 
 
-
-
-
-
+select d.DEPARTMENT_ID, avg(e.SALARY)
+from employees e
+JOIN departments d
+on e.DEPARTMENT=d.DEPARTMENT
+WHERE d.DEPARTMENT_ID 
+    
+    
+    
 
 
 
